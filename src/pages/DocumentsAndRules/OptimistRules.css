@@ -1,0 +1,94 @@
+.rules-page {
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    transition: background-image 1.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .rules-overlay {
+    flex: 1;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .rules-card {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px) brightness(1.1);
+    padding: 60px 80px; /* Pehle 50px 60px tha, ab aur bada kar diya */
+    border-radius: 25px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    animation: popIn 1.5s ease;
+    max-width: 800px; /* ✅ New line: fixed width jisse card bada aur sundar lage */
+    width: 90%;
+  }
+  
+  .rules-card h1 {
+    font-size: 3rem;
+    color: #ffffff;
+    margin-bottom: 15px;
+  }
+  
+  .rules-card p {
+    color: #d0d0d0;
+    margin-bottom: 30px;
+    font-size: 1.2rem;
+  }
+  
+  .rules-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+  }
+  
+  .rules-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .rules-button:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 12px 25px rgba(0, 114, 255, 0.6);
+  }
+  
+  .rules-button.view {
+    background: linear-gradient(135deg, #34e89e, #0f3443);
+  }
+  
+  .rules-button.download {
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+  }
+  
+  .button-icon {
+    font-size: 20px;
+  }
+  
+  /* Entry Animation */
+  @keyframes popIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.7);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
