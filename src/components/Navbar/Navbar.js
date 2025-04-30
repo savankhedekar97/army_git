@@ -1,37 +1,31 @@
 // src/components/Navbar/Navbar.js
-
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Navbar.css';
 
 export default function Navbar() {
+  const navigate = useNavigate();
+
   return (
     <div className="menu-bar sticky-top">
-      <nav className="navbar navbar-expand-lg navbar-dark" >
-      <div
-        className="brand-box"
-        onClick={()=>{navigate("/")}}
-     
-      >
-        <img
-          src="/assets/images/LOGO NOAI.jpg"
-          alt="NOAI Logo"
-          className="brand-logo"
-        />
+      <nav className="navbar navbar-expand-lg navbar-dark">
+        <div className="container-fluid">
+          {/* Brand Logo & Text */}
+          <div className="brand-box" onClick={() => navigate("/")}>
+            <img
+              src="/assets/images/LOGO NOAI.jpg"
+              alt="NOAI Logo"
+              className="brand-logo"
+            />
+            <div className="text-wrapper">
+              <h3 className="brand-text">
+                National Optimist<br />
+                Association of <span>India</span>
+              </h3>
+            </div>
+          </div>
 
-        <div className="text-wrapper" >
-          <h3 className="brand-text">
-            National Optimist<br/>
-            Association of <span>India</span>
-          </h3>
-
-          
-         
-          
-        </div>
-      </div>
-        <div className="container">
-
+          {/* Toggler */}
           <button
             className="navbar-toggler"
             type="button"
@@ -41,13 +35,12 @@ export default function Navbar() {
             <span className="navbar-toggler-icon"></span>
           </button>
 
+          {/* Nav Links */}
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ms-auto">
-
               <li className="nav-item">
                 <Link className="nav-link" to="/">Home</Link>
               </li>
-
               <li className="nav-item dropdown hover-dropdown">
                 <span className="nav-link dropdown-toggle" role="button">Events</span>
                 <ul className="dropdown-menu">
@@ -56,7 +49,6 @@ export default function Navbar() {
                   <li><Link className="dropdown-item" to="/results">Results</Link></li>
                 </ul>
               </li>
-
               <li className="nav-item dropdown hover-dropdown">
                 <span className="nav-link dropdown-toggle" role="button">Multimedia</span>
                 <ul className="dropdown-menu">
@@ -64,7 +56,6 @@ export default function Navbar() {
                   <li><Link className="dropdown-item" to="/videos">Videos</Link></li>
                 </ul>
               </li>
-
               <li className="nav-item dropdown hover-dropdown">
                 <span className="nav-link dropdown-toggle" role="button">Documents & Rules</span>
                 <ul className="dropdown-menu">
@@ -79,15 +70,12 @@ export default function Navbar() {
                   <li><Link className="dropdown-item" to="/optimist-rules">Optimist Class Rules</Link></li>
                 </ul>
               </li>
-
               <li className="nav-item">
                 <Link className="nav-link" to="/news">News</Link>
               </li>
-
               <li className="nav-item">
                 <Link className="nav-link" to="/contact">Contact</Link>
               </li>
-
             </ul>
           </div>
         </div>

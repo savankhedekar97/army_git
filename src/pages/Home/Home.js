@@ -7,6 +7,22 @@ const Home = () => {
   return (
     <div className="home-container">
        <ImageCarousel/>
+       <div className="card-section">
+        <div className="home-card">
+          <h2>NOAI</h2>
+          <a href="/assets/document/NOAI History.docx" download className="btn-download">
+             NAOI History
+            </a>
+        </div>
+
+        <div className="home-card">
+          <h2>Org NOAI</h2>
+          <a href="/assets/document/Org NOAI (Pending).pptx" download className="btn-download">
+             Organization NAOI 
+            </a>
+        </div>
+
+      </div>
       <div className="card-section">
         <div className="home-card">
           <h2>Events</h2>

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import './Carousel.css';
 
 const images = [
   "/assets/slideImage/image1.jpg",
@@ -13,14 +14,15 @@ const images = [
 ];
 
 const Carousel = () => {
-  const [centerIndex, setCenterIndex] = useState(1);
+  const [centerIndex, setCenterIndex] = useState(0);
+  const [paused, setPaused] = useState(false);
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      moveRight();
-    }, 3000);
-    return () => clearInterval(timer);
-  }, []);
+    const interval = setInterval(() => {
+      if (!paused) moveRight();
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [paused]);
 
   const moveLeft = () => {
     setCenterIndex((prev) => (prev - 1 + images.length) % images.length);
@@ -40,72 +42,25 @@ const Carousel = () => {
   };
 
   return (
-    <div style={styles.container}>
-      <button onClick={moveLeft} style={styles.arrow}>&#8249;</button>
+    <div
+      className="carousel-container"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+    >
+      <button className="carousel-arrow left" onClick={moveLeft}>&#8249;</button>
 
-      <div style={styles.carousel}>
+      <div className="carousel-track">
         {getVisibleImages().map((src, i) => (
-          <div
-            key={i}
-            style={{
-              ...styles.imageWrapper,
-              transform: i === 1 ? 'scale(1.1)' : 'scale(1.1)',
-              zIndex: i === 1 ? 2 : 2,
-            }}
-          >
-            <img src={src} style={styles.image} alt={`carousel-${i}`} />
+          <div key={i} className={`carousel-slide ${i === 1 ? 'active' : 'inactive'}`}>
+            <img src={src} alt={`carousel-${i}`} />
+            <div className="carousel-gradient" />
           </div>
         ))}
       </div>
 
-      <button onClick={moveRight} style={styles.arrow}>&#8250;</button>
+      <button className="carousel-arrow right" onClick={moveRight}>&#8250;</button>
     </div>
   );
-};
-
-const styles = {
-  container: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: '100%',
-    margin: 'auto',
-  
-    position: 'relative',
-  },
-  arrow: {
-    fontSize: '2rem',
-    background: 'transparent',
-    border: 'none',
-    cursor: 'pointer',
-    color: '#333',
-    zIndex: 10,
-    userSelect: 'none',
-  },
-  carousel: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    gap: '30px',
-    overflow: 'hidden',
-    width: '100%',
-  },
-  imageWrapper: {
-    position: 'relative',
-    width: '500px',
-    height: '300px',
-    transition: 'transform 0.5s ease',
-    borderRadius: '12px',
-    overflow: 'hidden',
-    boxShadow: '0 4px 10px rgba(0,0,0,0.3)',
-    flexShrink: 0,
-  },
-  image: {
-    width: '100%',
-    height: '100%',
-    objectFit: 'fill',
-    display: 'block',
-  },
 };
 
 export default Carousel;
