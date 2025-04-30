@@ -1,12 +1,9 @@
-// src/pages/Multimedia/Video.js
 import React from 'react';
-import './Video.css';  // <-- यहाँ Video.css ही रहेगा
+import './Video.css';
 
 const videoList = [
-  '/assets/videos/video1.mp4',
-  '/assets/videos/video2.mp4',
-  '/assets/videos/video3.mp4',
-  // अपनी बाकी videos के filenames
+  '/assets/videos/video_1.mp4',
+  '/assets/videos/video_2.mp4',
 ];
 
 export default function Video() {
@@ -15,8 +12,13 @@ export default function Video() {
       <h2 className="videos-title">Our Videos</h2>
       <div className="videos-grid">
         {videoList.map((src, idx) => (
-          <div className="video-card" key={idx}>
-            <video controls className="video-item">
+          <div className="video-card" key={idx} style={{ '--order': idx + 1 }}>
+            <div className="play-overlay" />
+            <video
+              controls
+              className="video-item"
+              preload="metadata"
+            >
               <source src={src} type="video/mp4" />
               Your browser does not support the video tag.
             </video>

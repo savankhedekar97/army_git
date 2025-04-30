@@ -1,43 +1,39 @@
-import './Footer.css';
-import { FaFacebookF, FaInstagram, FaYoutube, FaTwitter } from 'react-icons/fa';
+import React from "react";
+import { Link } from "react-router-dom";
+import "./Footer.css";
 
 const Footer = () => {
   return (
-    <footer className="footer">
-      <div className="footer-glass">
-        <div className="footer-columns">
-          
-          {/* Column 1: About */}
-          <div className="footer-col">
-            <h3>About NAOI</h3>
-            <p>National Association of Optimist India (NAOI) promotes sailing, organizes events, and nurtures young talent in the Optimist class.</p>
-          </div>
-
-          {/* Column 2: Quick Links */}
-          <div className="footer-col">
-            <h3>Quick Links</h3>
-            <ul>
-              <li><a href="/">Home</a></li>
-              <li><a href="/videos">Videos</a></li>
-              <li><a href="/images">Images</a></li>
-              <li><a href="/contact">Contact</a></li>
-            </ul>
-          </div>
-
-          {/* Column 3: Social Media */}
-          <div className="footer-col">
-            <h3>Follow Us</h3>
-            <div className="footer-social">
-              <a href="#"><FaFacebookF /></a>
-              <a href="#"><FaInstagram /></a>
-              <a href="#"><FaYoutube /></a>
-              <a href="#"><FaTwitter /></a>
-            </div>
-          </div>
-
+    <footer className="army-footer">
+      <div className="footer-container">
+        <div className="footer-column">
+          <h4>Events</h4>
+          <ul>
+            <li><Link to="/domestic-sailing-calendar">Calendar</Link></li>
+            <li><Link to="/results">Results</Link></li>
+          </ul>
         </div>
-        <hr />
-        <p className="footer-copy">© {new Date().getFullYear()} NAOI. All rights reserved.</p>
+        <div className="footer-column">
+          <h4>Documents & Rules</h4>
+          <ul>
+            <li><Link to="/constitution">Constitution</Link></li>
+            <li><Link to="/results">Forms</Link></li>
+            <li><Link to="/optimist-rules">Optimist Class Rules</Link></li>
+          </ul>
+        </div>
+        <div className="footer-column">
+          <h4>Multimedia</h4>
+          <ul>
+            <li><Link to="/videos">Videos</Link></li>
+            <li><Link to="/images">Photo Gallery</Link></li>
+          </ul>
+        </div>
+        <div className="footer-column">
+          <h4>Contact</h4>
+          <ul>
+            <li><Link to="/contact">Contact Us</Link></li>
+          </ul>
+        </div>
       </div>
     </footer>
   );
