@@ -1,14 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import './NOR.css';
+import React, { useState, useEffect } from "react";
+import "./NOR.css";
+import { FaEye, FaDownload } from "react-icons/fa";
+
+const images = [
+  "/assets/gallery/IMG_0041.jpg",
+  "/assets/gallery/IMG_0065.jpg",
+  "/assets/gallery/IMG_0085.jpg",
+  "/assets/gallery/IMG_0031.jpg",
+];
 
 const NOR = () => {
-  const images = [
-    '/assets/images/contact_bg1.jpg',
-    '/assets/images/contact_bg2.jpg',
-    '/assets/images/contact_bg1.jpg',
-    '/assets/images/contact_bg2.jpg'
-  ];
-
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
@@ -18,30 +19,38 @@ const NOR = () => {
     return () => clearInterval(interval);
   }, []);
 
+  const backgroundImageStyle = {
+    backgroundImage: `url(${images[currentImageIndex]})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    backgroundAttachment: "fixed",
+    minHeight: "100vh",
+    display: "flex",
+    flexDirection: "column",
+  };
+
   return (
-    <div
-      className="nor-page"
-      style={{ backgroundImage: `url(${images[currentImageIndex]})` }}
-    >
-      <div className="nor-overlay">
-        <div className="nor-container">
-          <h1 className="title">Notice of Race (NOR)</h1>
-          <p className="subtitle">View or Download the official NOR documents easily.</p>
-          <div className="buttons">
+    <div style={backgroundImageStyle}>
+      <div className="domestic-overlay">
+        <div className="calendar-card">
+          <h1>Notice of Race (NOR) 2025</h1>
+          <p>View or Download the official NOR for YAI Youth National 2025.</p>
+          <div className="calendar-buttons">
             <a
-              href="/assets/documents/nor_2025.pdf"
+              href="/assets/documents/nor_yai_youth_national_2025.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-view"
+              className="view-button"
             >
-              View NOR
+              <FaEye className="button-icon" /> View NOR
             </a>
             <a
-              href="/assets/documents/nor_2025.pdf"
+              href="/assets/documents/nor_yai_youth_national_2025.pdf"
               download
-              className="btn-download"
+              className="download-button"
             >
-              Download NOR
+              <FaDownload className="button-icon" /> Download PDF
             </a>
           </div>
         </div>

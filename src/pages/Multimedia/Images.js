@@ -1,99 +1,117 @@
-import React, { useState, useEffect } from "react";
-import Masonry from "react-masonry-css";
-import InfiniteScroll from "react-infinite-scroll-component";
-import Viewer from "react-images-viewer";
-import "./Images.css";
+import React, { useEffect, useState } from 'react';
+import './Images.css';
 
-const allPhotos = [
-  { src: "/assets/gallery/IMG_0031.jpg" },
-  { src: "/assets/gallery/IMG_0041.jpg" },
-  { src: "/assets/gallery/IMG_0065.jpg" },
-  { src: "/assets/gallery/IMG_0085.jpg" },
-  { src: "/assets/gallery/IMG_0095.jpg" },
-  { src: "/assets/gallery/IMG_0103.jpg" },
-  { src: "/assets/gallery/IMG_0115.jpg" },
-  { src: "/assets/gallery/IMG_0128.jpg" },
-  { src: "/assets/gallery/IMG_0179.jpg" },
-  { src: "/assets/gallery/IMG_0180.jpg" },
-  { src: "/assets/gallery/IMG_0193.jpg" },
-  { src: "/assets/gallery/IMG_0204.jpg" },
+const imageList = [
+  "/assets/gallery/DJI_0015.jpg",
+  "/assets/gallery/IMG_0031.jpg",
+  "/assets/gallery/IMG_0041.jpg",
+  "/assets/gallery/IMG_0065.jpg",
+  "/assets/gallery/IMG_0085.jpg",
+  "/assets/gallery/IMG_0095.jpg",
+  "/assets/gallery/IMG_0103.JPG",
+  "/assets/gallery/IMG_0115.jpg",
+  "/assets/gallery/IMG_0128.jpg",
+  "/assets/gallery/IMG_0179.jpg",
+  "/assets/gallery/IMG_0184.jpg",
+  "/assets/gallery/IMG_0193.jpg",
+  "/assets/gallery/IMG_0204.jpg",
+  "/assets/gallery/IMG_0248.jpg",
+  "/assets/gallery/IMG_0266.jpg",
+  "/assets/gallery/IMG_0288.jpg",
+  "/assets/gallery/IMG_0305.jpg",
+  "/assets/gallery/IMG_0306.jpg",
+  "/assets/gallery/IMG_0322.jpg",
+  "/assets/gallery/IMG_0354.jpg",
+  "/assets/gallery/IMG_0364.jpg",
+  "/assets/gallery/IMG_0426.jpg",
+  "/assets/gallery/IMG_0499.jpg",
+  "/assets/gallery/IMG_9518.jpg",
+  "/assets/gallery/IMG_9617.jpg",
+  "/assets/gallery/IMG_9717.jpg",
+  "/assets/gallery/IMG_9766.jpg",
+  "/assets/gallery/IMG_9794.jpg",
+  "/assets/gallery/IMG_9809.jpg",
+  "/assets/gallery/IMG_9977.jpg"
 ];
 
-const Images = () => {
-  const [items, setItems] = useState(allPhotos.slice(0, 6));
-  const [hasMore, setHasMore] = useState(true);
-  const [currentImage, setCurrentImage] = useState(0);
-  const [viewerIsOpen, setViewerIsOpen] = useState(false);
+export default function Images() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [visibleCount, setVisibleCount] = useState(12);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
 
-  const fetchMoreData = () => {
-    if (items.length >= allPhotos.length) {
-      setHasMore(false);
-      return;
-    }
-    setTimeout(() => {
-      setItems(allPhotos.slice(0, items.length + 6));
-    }, 1000);
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % imageList.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const handleViewMore = () => {
+    setVisibleCount((prev) => prev + 12);
   };
 
   const openLightbox = (index) => {
-    setCurrentImage(index);
-    setViewerIsOpen(true);
+    setActiveIndex(index);
+    setLightboxOpen(true);
+  };
+
+  const nextImage = () => {
+    setActiveIndex((activeIndex + 1) % imageList.length);
+  };
+
+  const prevImage = () => {
+    setActiveIndex((activeIndex - 1 + imageList.length) % imageList.length);
   };
 
   const closeLightbox = () => {
-    setViewerIsOpen(false);
-  };
-
-  const moveNext = () => {
-    setCurrentImage((prev) => (prev + 1) % items.length);
-  };
-
-  const movePrev = () => {
-    setCurrentImage((prev) => (prev - 1 + items.length) % items.length);
+    setLightboxOpen(false);
   };
 
   return (
-    <div className="gallery-page">
-      <video autoPlay muted loop id="background-video">
-        <source src="/assets/gallery/background.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-
-      <div className="overlay">
-        <h1 className="gallery-heading">Gallery</h1>
-        <InfiniteScroll
-          dataLength={items.length}
-          next={fetchMoreData}
-          hasMore={hasMore}
-          loader={<h4>Loading...</h4>}
-          className="masonry-container"
-        >
-          <Masonry
-            breakpointCols={{ default: 4, 1100: 3, 700: 2, 500: 1 }}
-            className="my-masonry-grid"
-            columnClassName="my-masonry-grid_column"
-          >
-            {items.map((photo, index) => (
-              <div key={index} className="gallery-item" onClick={() => openLightbox(index)}>
-                <img src={photo.src} alt={`Gallery ${index}`} />
-              </div>
-            ))}
-          </Masonry>
-        </InfiniteScroll>
-
-        {viewerIsOpen && (
-          <Viewer
-            imgs={items.map((img) => ({ src: img.src }))}
-            currImg={currentImage}
-            isOpen={viewerIsOpen}
-            onClose={closeLightbox}
-            onClickNext={moveNext}
-            onClickPrev={movePrev}
+    <div className="gallery-wrapper">
+      <div className="background-slideshow">
+        {imageList.map((src, i) => (
+          <div
+            key={i}
+            className={`bg-slide ${i === currentSlide ? 'active' : ''}`}
+            style={{ backgroundImage: `url(${src})` }}
           />
+        ))}
+      </div>
+
+      <div className="gallery-content">
+        <div className="glass-title-box">
+          <h1 className="section-title">Our Image Gallery</h1>
+        </div>
+
+        <div className="gallery-grid">
+          {imageList.slice(0, visibleCount).map((src, index) => (
+            <div className="gallery-card" key={index} onClick={() => openLightbox(index)}>
+              <img src={src} alt={`gallery-${index}`} className="gallery-img" />
+            </div>
+          ))}
+        </div>
+
+        {visibleCount < imageList.length && (
+          <div className="view-more-wrapper">
+            <button className="view-more-btn" onClick={handleViewMore}>
+              View More
+            </button>
+          </div>
+        )}
+
+        {lightboxOpen && (
+          <div className="lightbox-overlay" onClick={closeLightbox}>
+            <span className="lightbox-close" onClick={closeLightbox}>&times;</span>
+            <img src={imageList[activeIndex]} className="lightbox-image" alt="preview" />
+            <div className="lightbox-nav">
+              <button onClick={(e) => { e.stopPropagation(); prevImage(); }}>&#10094;</button>
+              <button onClick={(e) => { e.stopPropagation(); nextImage(); }}>&#10095;</button>
+            </div>
+          </div>
         )}
       </div>
     </div>
   );
-};
-
-export default Images;
+}
