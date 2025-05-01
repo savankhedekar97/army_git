@@ -2,26 +2,36 @@ import React from "react";
 import "./Home.css";
 import { Link } from "react-router-dom";
 import ImageCarousel from "../../components/Carousel";
+import Constitution from "../DocumentsAndRules/Constitution";
+import DomesticSailingCalendar from "../Event/DomesticSailingCalendar/DomesticSailingCalendar";
+import Results from "../Event/Results/Results";
 
 const Home = () => {
   return (
     <div className="home-container">
-       <ImageCarousel/>
-       <div className="card-section">
+      <ImageCarousel />
+      <div className="card-section">
         <div className="home-card">
           <h2>NOAI</h2>
-          <a href="/assets/document/NOAI History.docx" download className="btn-download">
-             NAOI History
-            </a>
+          <a
+            href="/assets/document/NOAI History.docx"
+            download
+            className="btn-download"
+          >
+            NAOI History
+          </a>
         </div>
 
         <div className="home-card">
           <h2>Org NOAI</h2>
-          <a href="/assets/document/Org NOAI (Pending).pptx" download className="btn-download">
-             Organization NAOI 
-            </a>
+          <a
+            href="/assets/document/Org NOAI (Pending).pptx"
+            download
+            className="btn-download"
+          >
+            Organization NAOI
+          </a>
         </div>
-
       </div>
       <div className="card-section">
         <div className="home-card">
@@ -41,6 +51,11 @@ const Home = () => {
           <Link to="/contact">Contact Us</Link>
         </div>
       </div>
+      <div>
+        <Constitution page="home" />
+      </div>
+      <DomesticSailingCalendar />
+      <Results />
     </div>
   );
 };

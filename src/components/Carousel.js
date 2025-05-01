@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import './Carousel.css';
+import React, { useEffect, useState } from "react";
+import "./Carousel.css";
 
 const images = [
   "/assets/slideImage/image1.jpg",
@@ -47,18 +47,25 @@ const Carousel = () => {
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      <button className="carousel-arrow left" onClick={moveLeft}>&#8249;</button>
+      <button className="carousel-arrow left" onClick={moveLeft}>
+        &#8249;
+      </button>
 
       <div className="carousel-track">
         {getVisibleImages().map((src, i) => (
-          <div key={i} className={`carousel-slide ${i === 1 ? 'active' : 'inactive'}`}>
-            <img src={src} alt={`carousel-${i}`} />
+          <div
+            key={i}
+            className={`carousel-slide ${i === 1 ? "active" : "inactive"}`}
+          >
+            <img loading="lazy" src={src} alt={`carousel-${i}`} />
             <div className="carousel-gradient" />
           </div>
         ))}
       </div>
 
-      <button className="carousel-arrow right" onClick={moveRight}>&#8250;</button>
+      <button className="carousel-arrow right" onClick={moveRight}>
+        &#8250;
+      </button>
     </div>
   );
 };

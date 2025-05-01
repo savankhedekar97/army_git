@@ -9,8 +9,9 @@ const images = [
   "/assets/gallery/IMG_0085.jpg",
 ];
 
-const DomesticSailingCalendar = () => {
+const DomesticSailingCalendar = ({ page = "home" }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  console.log("@AM page", page);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -25,7 +26,8 @@ const DomesticSailingCalendar = () => {
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     backgroundAttachment: "fixed",
-    minHeight: "100vh",
+    // minHeight: "100vh",
+    height: page === "home" ? "60vh" : "100vh",
     display: "flex",
     flexDirection: "column",
   };
