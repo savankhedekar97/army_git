@@ -31,29 +31,7 @@ const HomeCards = () => {
   return (
     <div style={backgroundImageStyle}>
       <div className="home-tile">
-        <div className="card-section ">
-          <div className="home-card">
-            <h2 className="card-title">NOAI</h2>
-            <a
-              href="/assets/document/NOAI History.docx"
-              download
-              className="btn-download /sub-card-title"
-            >
-              NAOI History
-            </a>
-          </div>
-
-          <div className="home-card">
-            <h2 className="card-title">Org NOAI</h2>
-            <a
-              href="/assets/document/Org NOAI (Pending).pptx"
-              download
-              className="btn-download sub-card-title"
-            >
-              Organization NAOI
-            </a>
-          </div>
-        </div>
+       
 
         <div className="card-section">
           <div className="home-card">
@@ -81,6 +59,29 @@ const HomeCards = () => {
             <Link className="sub-card-title" to="/contact">
               Contact Us
             </Link>
+          </div>
+        </div>
+        <div className="card-section ">
+          <div className="home-card">
+            <h2 className="card-title">NOAI</h2>
+            <a
+              href="/assets/document/NOAI History.docx"
+              download
+              className="btn-download /sub-card-title"
+            >
+              NOAI History
+            </a>
+          </div>
+
+          <div className="home-card">
+            <h2 className="card-title">Org NOAI</h2>
+            <a
+              href="/assets/document/Org NOAI (Pending).pptx"
+              download
+              className="btn-download sub-card-title"
+            >
+              Organization NOAI
+            </a>
           </div>
         </div>
       </div>

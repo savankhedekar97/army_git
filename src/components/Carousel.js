@@ -9,7 +9,6 @@ const images = [
   "/assets/slideImage/image5.jpg",
   "/assets/slideImage/image6.jpg",
   "/assets/slideImage/image7.jpg",
-  "/assets/slideImage/image8.jpg",
   "/assets/slideImage/image9.jpg",
 ];
 
@@ -20,7 +19,7 @@ const Carousel = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       if (!paused) moveRight();
-    }, 4000);
+    }, 2000);
     return () => clearInterval(interval);
   }, [paused]);
 

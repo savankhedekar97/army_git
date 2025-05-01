@@ -1,4 +1,3 @@
-// src/components/Navbar/Navbar.js
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './Navbar.css';
@@ -37,7 +36,7 @@ export default function Navbar() {
 
           {/* Nav Links */}
           <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav ms-auto">
+            <ul className="navbar-nav ms-auto me-5">
               <li className="nav-item">
                 <Link className="nav-link" to="/">Home</Link>
               </li>

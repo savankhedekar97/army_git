@@ -33,7 +33,7 @@ function NewClubMembership() {
           <div className="buttons">
             {/* ✅ View PDF in new tab */}
             <a
-              href="/assets/documents/noai_membership_form_2024.pdf"
+              href="/assets/documents/NOAI Membership form 2024.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-view"
@@ -43,7 +43,7 @@ function NewClubMembership() {
 
             {/* ✅ Download PDF */}
             <a
-              href="/assets/documents/noai_membership_form_2024.pdf"
+              href="/assets/documents/NOAI Membership form 2024.pdf"
               download
               className="btn-download"
             >

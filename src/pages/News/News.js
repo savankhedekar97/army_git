@@ -27,14 +27,30 @@ function News() {
         className="news-bg"
         style={{ backgroundImage: `url(${images[bgIndex]})` }}
       />
-      <div className="news-glass fade-in">
-        <h2>News & Announcements</h2>
-        <ul className="news-list">
+
+      <div className="news-glass zoom-in">
+        <div className="news-heading">
+          <div className="disco-icon-wrapper">
+            <img
+              src="/assets/images/newsicon.png"
+              alt="News Icon"
+              className="disco-icon"
+            />
+            <div className="disco-glow"></div>
+          </div>
+          <h2 className="news-title">News & Announcements</h2>
+        </div>
+
+        <ul className="news-list slide-up">
           <li>
-            <Link to="/news/youth-national">Youth National Commencien</Link>
+            <Link to="/news/youth-national" className="fancy-link">
+              <span>🏆 Youth National Commencien</span>
+            </Link>
           </li>
           <li>
-            <Link to="/news/wet-and-wild">Wet and Wild Regatta</Link>
+            <Link to="/news/wet-and-wild" className="fancy-link">
+              <span>🌊 Wet and Wild Regatta</span>
+            </Link>
           </li>
         </ul>
       </div>

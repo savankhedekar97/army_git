@@ -35,7 +35,7 @@ const DomesticSailingCalendar = ({ page = "home" }) => {
       <div className="domestic-overlay">
         <div className="calendar-card">
           <h1>Domestic Sailing Calendar 2025</h1>
-          <p>View or Download the official NAOI Sailing Calendar easily.</p>
+          <p>View or Download the official NOAI Sailing Calendar easily.</p>
           <div className="calendar-buttons">
             <a
               href="/assets/documents/domestic_sailing_calendar_2025.pdf"

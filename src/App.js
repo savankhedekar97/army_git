@@ -25,6 +25,7 @@ import Video from "./pages/Multimedia/Video";
 import News from "./pages/News/News";
 import YouthNational from "./pages/News/YouthNational";
 import WetAndWild from "./pages/News/WetAndWild";
+import NotFound from "./components/Notfound/NotFound";
 
 export default function App() {
   return (
@@ -53,6 +54,7 @@ export default function App() {
         <Route path="/news" element={<News />} />
         <Route path="/news/youth-national" element={<YouthNational />} />
         <Route path="/news/wet-and-wild" element={<WetAndWild />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
 
       <Footer />

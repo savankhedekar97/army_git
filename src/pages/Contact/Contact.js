@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 
 function Contact() {
   const images = [
-    '/assets/images/contact_bg1.jpg',
+    '/assets/images/footer.jpg',
     '/assets/images/contact_bg2.jpg'
   ];
 
@@ -23,7 +23,8 @@ function Contact() {
           <h1 className="text-center mb-4">Contact Us</h1>
           <div className="info-card">
             <h3>Address</h3>
-            <p>Corps of Engineers Sailing Club (CESC),<br />F Combat, College of Military Engineering (CME),<br />Dapodi, Pune – 411031, Maharashtra</p>
+            <p>National Optimist Association of India.Sailing Club, <br />Middle Lake, <br />CME Dapodi.
+            Pune -411031 Maharashtra.</p>
           </div>
           <div className="info-card">
             <h3>Emails</h3>

@@ -37,13 +37,13 @@ function Constitution({ page = "home" }) {
     >
       <div className="constitution-overlay">
         <div className="constitution-container  animate-constitution">
-          <h1 className="title">NAOI Constitution 2012</h1>
+          <h1 className="title">NOAI Constitution 2012</h1>
           <p className="subtitle">
             View or Download the full Constitution Document easily and securely.
           </p>
           <div className="buttons">
             <a
-              href="/assets/documents/constitution.pdf"
+              href="/assets/documents/NOAI_constitution.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-view"
@@ -51,7 +51,7 @@ function Constitution({ page = "home" }) {
               View Constitution
             </a>
             <a
-              href="/assets/documents/constitution.pdf"
+              href="/assets/documents/NOAI_constitution.pdf"
               download
               className="btn-download"
             >
