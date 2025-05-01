@@ -12,14 +12,6 @@ const images = [
 const DomesticSailingCalendar = ({ page = "home" }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   console.log("@AM page", page);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 4000);
-    return () => clearInterval(interval);
-  }, []);
-
   const backgroundImageStyle = {
     backgroundImage: `url(${images[currentImageIndex]})`,
     backgroundSize: "cover",
@@ -31,6 +23,12 @@ const DomesticSailingCalendar = ({ page = "home" }) => {
     display: "flex",
     flexDirection: "column",
   };
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div style={backgroundImageStyle}>

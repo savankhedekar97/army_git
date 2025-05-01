@@ -1,8 +1,23 @@
+.home-tile{
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  color: #fff !important;
+}
+
 .home-container {
   font-family: 'Segoe UI', sans-serif;
   background-color: #e8f4fa;
 }
+.card-title{
+color: white !important ;
+font-size: 25px !important;
+font-weight: 600;
 
+}
+/* 
+.sub-card-title{
+  color: white !important;
+  } */
 .hero-banner {
   background-size: cover;
   height: 600px;
