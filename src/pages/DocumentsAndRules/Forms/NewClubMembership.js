@@ -14,7 +14,7 @@ function NewClubMembership() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 4000); // Change every 4 seconds
+    }, 4000);
     return () => clearInterval(interval);
   }, [images.length]);
 
@@ -31,9 +31,9 @@ function NewClubMembership() {
           </p>
 
           <div className="buttons">
-            {/* ✅ View the form in a new tab */}
+            {/* ✅ View PDF in new tab */}
             <a
-              href="/assets/documents/new_club_membership_form.pdf"
+              href="/assets/documents/noai_membership_form_2024.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-view"
@@ -41,9 +41,9 @@ function NewClubMembership() {
               View Membership Form
             </a>
 
-            {/* ✅ Download the form directly */}
+            {/* ✅ Download PDF */}
             <a
-              href="/assets/documents/new_club_membership_form.pdf"
+              href="/assets/documents/noai_membership_form_2024.pdf"
               download
               className="btn-download"
             >

@@ -1,74 +1,189 @@
-/* src/pages/Event/Results.css */
-
-.results-page {
+.results-wrapper {
+  position: relative;
   min-height: 100vh;
+  padding: 60px 20px;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right top, #e9f2ff, #ffffff);
+  overflow-x: hidden;
+}
+
+.results-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  filter: blur(8px) brightness(0.75);
+  opacity: 0.4;
+  z-index: 1;
+}
+
+.results-title {
   position: relative;
-  transition: background-image 1s ease-in-out;
-  display: flex;
-  flex-direction: column;
+  z-index: 2;
+  text-align: center;
+  font-size: 38px;
+  font-weight: bold;
+  color: #002a5c;
+  margin-bottom: 40px;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-.results-overlay {
-  flex: 1;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(8px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* Grid layout */
+.results-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
-.results-card {
+/* Cards */
+.result-card {
   background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(12px);
-  padding: 50px;
+  backdrop-filter: blur(12px) saturate(180%);
   border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  padding: 30px 20px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
   text-align: center;
-  animation: fadeIn 1.5s ease;
-  max-width: 800px;
-  width: 90%;
+  position: relative;
+  transition: all 0.4s ease;
+  overflow: hidden;
+  border: 2px solid transparent;
+  animation: fadeIn 0.8s ease forwards;
 }
 
-.results-card h1 {
-  font-size: 2.8rem;
+/* 🔄 Class name with emoji */
+.result-card h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #00386b;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+/* ✨ Shine Swipe */
+.result-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.1), rgba(255,255,255,0.6), rgba(255,255,255,0.1));
+  transform: skewX(-25deg);
+  z-index: 3;
+  transition: all 0.5s ease;
+}
+.result-card:hover::after {
+  left: 125%;
+}
+
+/* 🌈 Border Glow on Hover */
+.result-card::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(135deg, #00f2fe, #4facfe, #00f2fe);
+  background-size: 300% 300%;
+  animation: borderGlow 6s linear infinite;
+  border-radius: 22px;
+  opacity: 0;
+  z-index: 1;
+  transition: opacity 0.4s ease;
+}
+.result-card:hover::before {
+  opacity: 1;
+}
+
+/* Hover Elevation */
+.result-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 18px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Buttons container */
+.result-actions {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.4s ease;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 10px;
+  z-index: 2;
+  position: relative;
+}
+.result-card:hover .result-actions {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Buttons */
+.view-btn,
+.download-btn {
+  padding: 10px 20px;
+  background: #003b94;
   color: #fff;
-  margin-bottom: 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+.download-btn {
+  background: #007b5f;
+}
+.view-btn:hover {
+  background: #001f5c;
+}
+.download-btn:hover {
+  background: #005845;
 }
 
-.results-table {
-  width: 100%;
-  border-collapse: collapse;
-  color: white;
-}
-
-.results-table th,
-.results-table td {
-  padding: 15px;
-  text-align: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.results-table th {
-  font-size: 1.2rem;
-  color: #00c6ff;
-}
-
-.results-table tr:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  transition: background-color 0.3s ease;
-}
-
+/* Animations */
 @keyframes fadeIn {
-  0% {
+  from {
     opacity: 0;
-    transform: scale(0.95);
+    transform: scale(0.97);
   }
-  100% {
+  to {
     opacity: 1;
     transform: scale(1);
   }
+}
+@keyframes borderGlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Dark Mode (if needed) */
+.results-wrapper.dark .result-card {
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.results-wrapper.dark .result-card h3 {
+  color: #a0d4ff;
+}
+
+/* Optional emoji icon style */
+.emoji-icon {
+  font-size: 20px;
+  margin-right: 6px;
 }
