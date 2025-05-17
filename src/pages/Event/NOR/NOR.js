@@ -4,7 +4,6 @@ import { FaEye, FaDownload } from "react-icons/fa";
 
 const images = [
   "/assets/gallery/IMG_0041.jpg",
-  "/assets/gallery/IMG_0065.jpg",
   "/assets/gallery/IMG_0085.jpg",
   "/assets/gallery/IMG_0031.jpg",
 ];
@@ -15,7 +14,7 @@ const NOR = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 4000);
+    }, 3000);
     return () => clearInterval(interval);
   }, []);
 
@@ -28,6 +27,7 @@ const NOR = () => {
     minHeight: "100vh",
     display: "flex",
     flexDirection: "column",
+    opicity : '1',
   };
 
   return (

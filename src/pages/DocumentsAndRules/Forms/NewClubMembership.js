@@ -3,9 +3,9 @@ import './NewClubMembership.css';
 
 function NewClubMembership() {
   const images = [
-    '/assets/images/contact_bg1.jpg',
+    '/assets/images/contact_bg1.png',
     '/assets/images/contact_bg2.jpg',
-    '/assets/images/contact_bg1.jpg',
+    '/assets/images/contact_bg1.png',
     '/assets/images/contact_bg2.jpg',
   ];
 
@@ -14,7 +14,7 @@ function NewClubMembership() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 4000);
+    }, 3000);
     return () => clearInterval(interval);
   }, [images.length]);
 
@@ -31,7 +31,7 @@ function NewClubMembership() {
           </p>
 
           <div className="buttons">
-            {/* ✅ View PDF in new tab */}
+            {/*  View PDF in new tab */}
             <a
               href="/assets/documents/NOAI Membership form 2024.pdf"
               target="_blank"
@@ -41,7 +41,7 @@ function NewClubMembership() {
               View Membership Form
             </a>
 
-            {/* ✅ Download PDF */}
+            {/* Download PDF */}
             <a
               href="/assets/documents/NOAI Membership form 2024.pdf"
               download

@@ -1,7 +1,7 @@
 // src/pages/Event/ViewCalendar.js
 
 import React, { useState, useEffect } from "react";
-import "./ViewCalendar.css"; // ✅ CSS bhi dunga abhi
+import "./ViewCalendar.css"; // 
 import { FaArrowLeft } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
@@ -9,7 +9,6 @@ const images = [
   "/assets/gallery/IMG_0031.jpg",
   "/assets/gallery/IMG_0041.jpg",
   "/assets/gallery/IMG_0065.jpg",
-  "/assets/gallery/IMG_0085.jpg",
 ];
 
 const ViewCalendar = () => {
@@ -19,7 +18,7 @@ const ViewCalendar = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 4000);
+    }, 3000);
     return () => clearInterval(interval);
   }, []);
 

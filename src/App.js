@@ -21,7 +21,6 @@ import ViewCalendar from "./pages/Event/ViewCalendar";
 import Images from "./pages/Multimedia/Images";
 import Video from "./pages/Multimedia/Video";
 
-// 🆕 News-related pages
 import News from "./pages/News/News";
 import YouthNational from "./pages/News/YouthNational";
 import WetAndWild from "./pages/News/WetAndWild";
@@ -34,7 +33,7 @@ export default function App() {
       <Navbar />
 
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
 
         <Route path="/constitution" element={<Constitution page="non-home" />} />

@@ -2,14 +2,39 @@ import React, { useEffect, useState } from "react";
 import "./Carousel.css";
 
 const images = [
+
+"/assets/slideImage/image01.jpg",
+"/assets/slideImage/image02.jpg",
+"/assets/slideImage/image03.jpg",
+"/assets/slideImage/image04.jpg",
+"/assets/slideImage/image05.jpg",
+"/assets/slideImage/image06.jpg",
+"/assets/slideImage/image07.jpg",
+"/assets/slideImage/image08.jpg",
+"/assets/slideImage/image09.jpg",
+
+
+
+
+  "/assets/slideImage/image20.jpg",
+  "/assets/slideImage/image19.jpg",
+  "/assets/slideImage/image18.jpg",
+  "/assets/slideImage/image17.jpg",
+  "/assets/slideImage/image16.jpg",
   "/assets/slideImage/image1.jpg",
   "/assets/slideImage/image2.jpg",
   "/assets/slideImage/image3.jpg",
   "/assets/slideImage/image4.jpg",
+  "/assets/slideImage/image15.jpg",
   "/assets/slideImage/image5.jpg",
   "/assets/slideImage/image6.jpg",
   "/assets/slideImage/image7.jpg",
-  "/assets/slideImage/image9.jpg",
+  "/assets/slideImage/image12.jpg",
+  "/assets/slideImage/image13.jpg",
+  "/assets/slideImage/image8.jpg",
+  "/assets/slideImage/image10.jpg",
+  "/assets/slideImage/image11.jpg",
+  "/assets/slideImage/image14.jpg",
 ];
 
 const Carousel = () => {
@@ -19,7 +44,7 @@ const Carousel = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       if (!paused) moveRight();
-    }, 2000);
+    }, 1000);
     return () => clearInterval(interval);
   }, [paused]);
 

@@ -3,9 +3,9 @@ import './IssueOfOptiSailNumber.css';
 
 function IssueOfOptiSailNumber() {
   const images = [
-    '/assets/images/contact_bg1.jpg',
+    '/assets/images/contact_bg1.png',
     '/assets/images/contact_bg2.jpg',
-    '/assets/images/contact_bg1.jpg',
+    '/assets/images/contact_bg1.png',
     '/assets/images/contact_bg2.jpg',
   ];
 

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "./Home.css"; // Optional: if you want to add specific styles
+import "./Home.css"; // 
 const images = [
   "/assets/gallery/IMG_0031.jpg",
   "/assets/gallery/IMG_0041.jpg",
@@ -31,8 +31,6 @@ const HomeCards = () => {
   return (
     <div style={backgroundImageStyle}>
       <div className="home-tile">
-       
-
         <div className="card-section">
           <div className="home-card">
             <h2 className="card-title">Events</h2>
@@ -65,7 +63,7 @@ const HomeCards = () => {
           <div className="home-card">
             <h2 className="card-title">NOAI</h2>
             <a
-              href="/assets/document/NOAI History.docx"
+              href="/assets/documents/NOAI History.pdf"
               download
               className="btn-download /sub-card-title"
             >
@@ -76,7 +74,7 @@ const HomeCards = () => {
           <div className="home-card">
             <h2 className="card-title">Org NOAI</h2>
             <a
-              href="/assets/document/Org NOAI (Pending).pptx"
+              href="/assets/documents/Org NOAI.pdf"
               download
               className="btn-download sub-card-title"
             >

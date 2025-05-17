@@ -14,7 +14,7 @@
     background: rgba(0, 0, 0, 0.5);
     width: 90%;
     height: 90%;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(1px);
     padding: 20px;
     border-radius: 20px;
     overflow-y: auto;

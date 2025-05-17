@@ -1,3 +1,4 @@
+/* ===== Navbar ===== */
 .menu-bar .navbar {
   padding: 0.5rem 1rem;
   background-color: #000;
@@ -68,9 +69,14 @@
 }
 
 /* ===== Dropdowns ===== */
-/* ===== Submenu Opens Right ===== */
-.dropdown-submenu {
-  position: relative;
+.dropdown-menu {
+  background: #111;
+  border-radius: 10px;
+  padding: 8px 0;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  position: absolute;
 }
 
 .dropdown-submenu .dropdown-menu {
@@ -82,18 +88,15 @@
   opacity: 0;
   transform: translateX(10px);
   transition: all 0.3s ease;
-  background: #111;
+  background: #fff; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   display: none;
   min-width: 220px;
   z-index: 1000;
 }
 
-.dropdown-submenu .dropdown-menu {
-  background: #fff; /* white background to match parent */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-  padding: 8px 0;
-  color: #000;
+.dropdown-submenu {
+  position: relative;
 }
 
 .hover-dropdown:hover > .dropdown-menu,
@@ -122,4 +125,74 @@
     transform: none !important;
     opacity: 1 !important;
   }
+}
+
+/* Mobile Menu Icon aligned to right of logo */
+.mobile-menu-icon {
+  margin-left: auto;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.mobile-menu-icon .navbar-toggler-icon {
+  width: 30px;
+  height: 30px;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30' ... %3C/svg%3E");
+}
+
+/* Canvas-style Mobile Nav */
+.mobile-nav-canvas {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 300px;
+  height: 100vh;
+  background: #222; 
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+  transition: right 0.3s ease-in-out;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  z-index: 9999;
+  overflow: scroll;
+}
+
+.mobile-nav-canvas.open {
+  right: 0;
+}
+
+.close-button {
+  font-size: 2rem;
+  color: white;
+  background: none;
+  border: none;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+}
+
+.mobile-nav-links {
+  list-style: none;
+  padding: 0;
+  margin-top: 4rem;
+  width: 100%;
+}
+
+.mobile-nav-links li {
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #444;
+  padding-bottom: 0.5rem;
+}
+
+.mobile-nav-links li:last-child {
+  border-bottom: none;
+}
+
+.mobile-nav-links a {
+  color: white;
+  font-size: 1.2rem;
+  text-decoration: none;
 }

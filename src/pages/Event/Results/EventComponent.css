@@ -1,0 +1,80 @@
+.event-wrapper {
+    position: relative;
+    min-height: 100vh;
+    padding: 60px 20px;
+    overflow-x: hidden;
+    font-family: 'Segoe UI', sans-serif;
+    object-fit: fill;
+  }
+  
+  .event-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.7);
+    z-index: 1;
+    object-fit: fill;
+  }
+  
+  .event-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1100px;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(4px);
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .event-title {
+    text-align: center;
+    color: #003a74;
+    font-size: 32px;
+    margin-bottom: 30px;
+  }
+  
+  .back-btn {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    background: #003a74;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .event-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .event-table th, .event-table td {
+    padding: 14px 18px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .event-table th {
+    background: #004080;
+    color: white;
+  }
+  
+  .event-table a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  .event-table a:hover {
+    text-decoration: underline;
+  }
+  

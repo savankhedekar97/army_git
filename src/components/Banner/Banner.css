@@ -2,19 +2,19 @@
 .banner {
     position: relative;
     width: 100%;
-    height: 200px;          /* सभी डिवाइसेज़ पर अब 200px ऊँचाई */
+    height: 200px;          
     overflow: hidden;
     perspective: 1000px;
 
   }
   
-  /* ======== Background Image ======== */
+  
   .banner-bg {
     position: absolute;
     top: 0; left: 0;
     width: 100%;
     height: 100%;
-    background-size: cover;        /* पूरे एरिया को कवर */
+    background-size: cover;       
     background-position: center;
     filter: brightness(0.6);
     transform: scale(1.05);
@@ -26,11 +26,11 @@
     filter: brightness(0.5);
   }
   
-  /* ======== Glassy Brand Box ======== */
+ 
   .brand-box {
     position: absolute;
     top: 50%;
-    left: 40px; /* or adjust as per spacing needs */
+    left: 40px; 
     transform: translateY(-50%);
     display: flex;
     align-items: center;
@@ -46,9 +46,8 @@
     transform: translateY(-52%) scale(1.02);
   }
   
-  /* ======== Logo Animation ======== */
   .brand-logo {
-    height: 60px;               /* छोटा किया */
+    height: 60px;               
     margin-right: 16px;
     border-radius: 6px;
     animation:
@@ -64,14 +63,14 @@
     50%     { transform: scale(1.1); }
   }
   
-  /* ======== Text Wrapper ======== */
+  
   .text-wrapper {
     display: flex;
     flex-direction: column;
     color: #fff;
   }
   
-  /* ======== Site Title ======== */
+
   .brand-text {
     margin: 0;
     font-size: 16px !important;         
@@ -91,7 +90,7 @@
     100% { background-position: 0%  50%; }
   }
   
-  /* ======== Tagline 3D Pop-In ======== */
+
   .tagline {
     margin: 6px 0 0;
     font-size: 0.9rem;
@@ -109,10 +108,10 @@
     }
   }
   
-  /* ======== Responsive: Desktop Banner Size ======== */
+ 
   @media (min-width: 768px) {
     .banner {
-      height: 166px;          /* Desktop पर 166px */
+      height: 166px;          
     }
     .brand-logo {
       height: 50px;

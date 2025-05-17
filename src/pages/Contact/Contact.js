@@ -12,7 +12,7 @@ function Contact() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 4000);
+    }, 3000);
     return () => clearInterval(interval);
   }, [images.length]);
 
@@ -23,8 +23,8 @@ function Contact() {
           <h1 className="text-center mb-4">Contact Us</h1>
           <div className="info-card">
             <h3>Address</h3>
-            <p>National Optimist Association of India.Sailing Club, <br />Middle Lake, <br />CME Dapodi.
-            Pune -411031 Maharashtra.</p>
+            <p>National Optimist Association of India, C/o Corps of Engineers Sailing Club, Near Middle Lake, CME Pune - 411031
+               Maharashtra</p>
           </div>
           <div className="info-card">
             <h3>Emails</h3>

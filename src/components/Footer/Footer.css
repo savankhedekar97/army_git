@@ -6,7 +6,7 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   /* border-top-left-radius: 12px; */
   /* border-top-right-radius: 12px; */
-  overflow: hidden; /* Ensure overlay doesn't overflow */
+  overflow: hidden; 
 }
 
 .army-footer::before {
@@ -16,11 +16,11 @@
   left: 0;
   height: 100%;
   width: 100%;
-  background: rgba(0, 0, 0, 0.6); /* Dark overlay with 60% opacity */
+  background: rgba(0, 0, 0, 0.6); 
   z-index: 0;
 }
 
-/* Make sure actual footer content appears above the overlay */
+
 .footer-container,
 .footer-bottom {
   position: relative;
@@ -66,7 +66,7 @@
 }
 
 .footer-column li a:hover {
-  color: rgb(255, 215, 0); /* Gold */
+  color: rgb(255, 215, 0); 
 }
 
 .social-icons {

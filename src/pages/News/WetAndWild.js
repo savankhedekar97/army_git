@@ -4,7 +4,7 @@ import "./NewsDetail.css";
 function WetAndWild() {
   return (
     <div className="news-detail-wrapper">
-      {/* ✅ Blurred background image */}
+      {}
       <div
         className="news-bg-overlay"
         style={{
@@ -12,7 +12,7 @@ function WetAndWild() {
         }}
       />
 
-      {/* ✅ Banner image section */}
+      {/* Banner image section */}
       <div className="news-image-box fade-in">
         <img
           src="/assets/documents/wet-and-wild-banner.jpg"
@@ -21,7 +21,7 @@ function WetAndWild() {
         />
       </div>
 
-      {/* ✅ Content glass box */}
+      {/* Content glass box */}
       <div className="news-content-box slide-up">
         <h2>Wet and Wild Regatta</h2>
         <p>

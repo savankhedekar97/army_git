@@ -12,7 +12,7 @@
   .rules-overlay {
     flex: 1;
     background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(1px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -21,13 +21,13 @@
   .rules-card {
     background: rgba(255, 255, 255, 0.12);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(15px) brightness(1.1);
-    padding: 60px 80px; /* Pehle 50px 60px tha, ab aur bada kar diya */
+    backdrop-filter: blur(1px) brightness(1.1);
+    padding: 60px 80px; 
     border-radius: 25px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     text-align: center;
     animation: popIn 1.5s ease;
-    max-width: 800px; /* ✅ New line: fixed width jisse card bada aur sundar lage */
+    max-width: 800px; 
     width: 90%;
   }
   
